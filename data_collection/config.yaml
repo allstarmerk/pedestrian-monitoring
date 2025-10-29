@@ -4,9 +4,9 @@
 bluetooth:
   scan_interval: 3  # Scan every 3 seconds (rapid scanning to never miss anyone!)
   scan_duration: 8  # Duration of each scan in seconds
-  stationary_threshold: 3600  # 1 hour - devices present longer considered stationary
+  stationary_threshold: 300  # 5 min - devices present longer considered stationary
   rssi_threshold: -80  # Minimum signal strength (dBm) to consider
-  device_timeout: 300  # 5 minutes - time before device considered "left"
+  device_timeout: 180  # 3 minutes - time before device considered "left"
   log_empty_scans: false  # Only log when devices detected (saves space!)
   
 # Privacy Settings

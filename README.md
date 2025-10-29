@@ -143,7 +143,7 @@ Access dashboard at: http://localhost:3000
 ##  Privacy & Ethics
 
 - **No Personal Data**: MAC addresses are immediately hashed with SHA-256
-- **Stationary Filtering**: Devices present >1 hour are excluded (homes, parked vehicles)
+- **Stationary Filtering**: Devices present >3 minutes are excluded (homes, parked vehicles)
 - **Aggregated Analysis**: Individual device tracking is impossible
 - **Transparent Operation**: System operation can be clearly signposted
 - **GDPR Compliant**: No PII collection or storage
@@ -185,8 +185,8 @@ Edit `data_collection/config.yaml`:
 
 ```yaml
 bluetooth:
-  scan_interval: 60  # seconds
-  stationary_threshold: 3600  # 1 hour in seconds
+  scan_interval: 3  # seconds
+  stationary_threshold: 300  # 3 hour in seconds allows for devices in range 
   
 aggregation:
   window_size: 4  # hours
