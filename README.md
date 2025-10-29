@@ -186,7 +186,7 @@ Edit `data_collection/config.yaml`:
 ```yaml
 bluetooth:
   scan_interval: 3  # seconds
-  stationary_threshold: 300  # 3 hour in seconds allows for devices in range 
+  stationary_threshold: 180  # 3 minutes in seconds allows for devices in range 
   
 aggregation:
   window_size: 4  # hours
