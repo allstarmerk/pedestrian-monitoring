@@ -1,0 +1,140 @@
+# Pedestrian Monitoring System Configuration
+
+# Bluetooth Scanning Settings
+bluetooth:
+  scan_interval: 3  # Scan every 3 seconds (rapid scanning to never miss anyone!)
+  scan_duration: 8  # Duration of each scan in seconds
+  stationary_threshold: 3600  # 1 hour - devices present longer considered stationary
+  rssi_threshold: -80  # Minimum signal strength (dBm) to consider
+  device_timeout: 300  # 5 minutes - time before device considered "left"
+  log_empty_scans: false  # Only log when devices detected (saves space!)
+  
+# Privacy Settings
+privacy:
+  hash_algorithm: "sha256"  # Hashing algorithm for MAC addresses
+  salt_rotation_days: 7  # Days before rotating anonymization salt
+  store_raw_mac: false  # Never store raw MAC addresses
+  
+# Data Aggregation
+aggregation:
+  window_size: 4  # Hours per aggregation window
+  overlap: 0  # No overlap between windows
+  min_devices_per_window: 1  # Minimum devices to consider window valid
+  
+# Machine Learning Models
+models:
+  # GMM Clustering
+  gmm:
+    n_components: 3  # Number of clusters (quiet, moderate, busy)
+    covariance_type: "full"  # full, tied, diag, spherical
+    max_iter: 100
+    random_state: 42
+    
+  # Forecasting Model
+  forecasting:
+    model_type: "xgboost"  # Options: xgboost, lstm, ensemble
+    forecast_horizon: 4  # Hours ahead to predict
+    lookback_window: 168  # Hours of history to use (7 days)
+    
+  # XGBoost Parameters
+  xgboost:
+    n_estimators: 200
+    max_depth: 6
+    learning_rate: 0.1
+    subsample: 0.8
+    colsample_bytree: 0.8
+    random_state: 42
+    
+  # LSTM Parameters (if using LSTM)
+  lstm:
+    units: 64
+    dropout: 0.2
+    epochs: 50
+    batch_size: 32
+    validation_split: 0.2
+    
+  # Model Retraining
+  retraining:
+    frequency_days: 7  # Retrain model every N days
+    min_samples: 1000  # Minimum samples needed for retraining
+    
+# API Server Settings
+api:
+  host: "0.0.0.0"  # Listen on all interfaces
+  port: 5000
+  debug: false
+  update_interval: 60  # Seconds between prediction updates
+  cors_origins: ["http://localhost:3000", "http://localhost:3001"]
+  
+# Data Storage
+storage:
+  raw_data_dir: "data/raw"
+  processed_data_dir: "data/processed"
+  models_dir: "data/models"
+  logs_dir: "logs"
+  backup_dir: "backups"
+  
+  # Data Retention
+  raw_retention_days: 30  # Keep raw logs for 30 days
+  processed_retention_days: 365  # Keep processed data for 1 year
+  
+# Logging
+logging:
+  level: "INFO"  # DEBUG, INFO, WARNING, ERROR, CRITICAL
+  format: "%(asctime)s - %(name)s - %(levelname)s - %(message)s"
+  file_max_bytes: 10485760  # 10 MB
+  backup_count: 5
+  
+# Hardware Monitoring
+hardware:
+  monitor_interval: 300  # Seconds between health checks
+  temperature_max: 80  # °C - alert threshold
+  cpu_max: 90  # % - alert threshold
+  memory_max: 90  # % - alert threshold
+  disk_min_free: 1024  # MB - minimum free disk space
+  
+# Alerts & Notifications
+alerts:
+  enabled: true
+  email_enabled: false  # Set to true and configure SMTP below
+  log_critical_only: true
+  
+  # SMTP Settings (if email alerts enabled)
+  smtp:
+    server: "smtp.gmail.com"
+    port: 587
+    use_tls: true
+    username: ""  # Set your email
+    password: ""  # Set your password or app-specific password
+    from_email: ""
+    to_emails: []
+    
+# Feature Engineering
+features:
+  # Time-based features
+  include_hour: true
+  include_day_of_week: true
+  include_month: true
+  include_is_weekend: true
+  include_is_holiday: false  # Requires holiday calendar
+  
+  # Lag features
+  lag_periods: [1, 2, 3, 4, 6, 12, 24, 168]  # Hours
+  
+  # Rolling statistics
+  rolling_windows: [6, 12, 24, 168]  # Hours
+  rolling_stats: ["mean", "std", "min", "max"]
+  
+# Deployment
+deployment:
+  mode: "production"  # development, production
+  auto_start_scanner: true
+  auto_start_api: true
+  timezone: "America/New_York"  # Set to your local timezone
+  
+# Dashboard Settings
+dashboard:
+  refresh_interval: 60000  # Milliseconds (60 seconds)
+  chart_history_hours: 48  # Hours of history to display
+  show_confidence_intervals: true
+  theme: "light"  # light, dark, auto

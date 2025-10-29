@@ -1,0 +1,31 @@
+[Unit]
+Description=Pedestrian Traffic Monitoring - Bluetooth Scanner
+Documentation=https://github.com/yourusername/pedestrian-monitoring
+After=network.target bluetooth.target
+Wants=bluetooth.target
+
+[Service]
+Type=simple
+User=pi
+Group=pi
+WorkingDirectory=/home/pi/pedestrian-monitoring
+Environment="PATH=/usr/local/bin:/usr/bin:/bin"
+Environment="PYTHONUNBUFFERED=1"
+
+# Wait for USB to be ready
+ExecStartPre=/bin/sleep 10
+
+# Start the scanner
+ExecStart=/usr/bin/python3 /home/pi/pedestrian-monitoring/data_collection/bluetooth_scanner.py
+
+# Restart on failure
+Restart=always
+RestartSec=10
+
+# Logging
+StandardOutput=journal
+StandardError=journal
+SyslogIdentifier=traffic-scanner
+
+[Install]
+WantedBy=multi-user.target
