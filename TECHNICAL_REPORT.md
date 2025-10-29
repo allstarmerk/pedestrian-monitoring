@@ -5,14 +5,14 @@
 
 ## Executive Summary
 
-This document presents a comprehensive privacy-preserving system for measuring and predicting pedestrian congestion at metro stations using Bluetooth signal detection and machine learning. The system operates entirely anonymously without cameras or personal data collection, making it ethically sound and GDPR compliant.
+This document presents a comprehensive privacy preserving system for measuring and predicting pedestrian congestion at metro stations using Bluetooth signal detection and machine learning. The system operates entirely anonymously without cameras or personal data collection, making it ethically sound and GDPR compliant.
 
 ### Key Achievements
 
 - **Privacy-First Design**: Complete anonymization through SHA-256 hashing of MAC addresses
 - **Accurate Pattern Recognition**: GMM clustering achieves >0.5 silhouette score identifying quiet/moderate/busy patterns
 - **Reliable Forecasting**: XGBoost/LSTM models predict traffic 4 hours ahead with <15% RMSE
-- **Real-Time Visualization**: React dashboard provides intuitive real-time monitoring
+- **Real-Time Visualization**: React dashboard provides intuitive real time monitoring when collecting data not offline
 - **Sustainable Operation**: Solar-powered, off-grid deployment capability
 - **Low Cost**: Total hardware cost <$300 for complete system
 
@@ -45,7 +45,7 @@ This document presents a comprehensive privacy-preserving system for measuring a
 - Pandas for data manipulation and aggregation
 - NumPy for numerical operations
 - 4-hour time window aggregation
-- Feature engineering (time-based, lag, rolling statistics)
+- Feature engineering (time based, lag, rolling statistics)
 
 **Machine Learning Layer**
 - **Clustering**: Scikit-learn Gaussian Mixture Models (GMM)

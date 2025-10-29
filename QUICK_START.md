@@ -402,9 +402,4 @@ curl http://localhost:5000/api/statistics | json_pp
 - [ ] Dashboard accessible and updating
 - [ ] System monitoring configured
 - [ ] Auto-start enabled (production)
-
----
-
-**Congratulations!** Your pedestrian monitoring system is now operational. 🎉
-
-The system will continuously collect data, update predictions, and provide real-time insights into traffic patterns at your metro station.
+--

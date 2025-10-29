@@ -2,7 +2,7 @@
 
 A privacy-preserving, low-cost system for measuring and predicting pedestrian traffic at metro stations using Bluetooth signal detection and machine learning.
 
-## 🎯 Project Overview
+##  Project Overview
 
 This system uses anonymous Bluetooth signal detection to estimate foot traffic patterns, applies machine learning for pattern recognition and forecasting, and provides real-time visualization through a web dashboard.
 
@@ -13,7 +13,7 @@ This system uses anonymous Bluetooth signal detection to estimate foot traffic p
 - **Off-Grid Ready**: Solar-powered operation for long-term deployment
 - **4-Hour Forecasting**: Predictive analytics for congestion management
 
-## 📁 Project Structure
+##  Project Structure
 
 ```
 pedestrian-monitoring/
@@ -50,7 +50,7 @@ pedestrian-monitoring/
 └── README.md
 ```
 
-## 🔧 Hardware Requirements
+##  Hardware Requirements
 
 | Component | Purpose | Notes |
 |-----------|---------|-------|
@@ -62,7 +62,7 @@ pedestrian-monitoring/
 | Desiccant Packs | Moisture control | Optional |
 | DS3231 RTC Module | Timekeeping | Optional, for offline operation |
 
-## 📦 Software Installation
+##  Software Installation
 
 ### Raspberry Pi Setup
 
@@ -100,7 +100,7 @@ cd dashboard
 npm install
 ```
 
-## 🚀 Quick Start
+##  Quick Start
 
 ### 1. Data Collection (Raspberry Pi)
 
@@ -140,7 +140,7 @@ npm start
 
 Access dashboard at: http://localhost:3000
 
-## 🔒 Privacy & Ethics
+##  Privacy & Ethics
 
 - **No Personal Data**: MAC addresses are immediately hashed with SHA-256
 - **Stationary Filtering**: Devices present >1 hour are excluded (homes, parked vehicles)
@@ -148,7 +148,7 @@ Access dashboard at: http://localhost:3000
 - **Transparent Operation**: System operation can be clearly signposted
 - **GDPR Compliant**: No PII collection or storage
 
-## 💾 Data Storage Options
+##  Data Storage Options
 
 **USB Storage (Recommended for field deployment):**
 - Plug in any USB drive and data automatically saves to it
@@ -161,7 +161,7 @@ Access dashboard at: http://localhost:3000
 - Data saved to Pi's SD card
 - Access via network or direct connection
 
-## 📊 System Workflow
+##  System Workflow
 
 1. **Data Collection**: Raspberry Pi scans for Bluetooth signals every 60 seconds
 2. **Anonymization**: MAC addresses are hashed immediately
@@ -171,7 +171,7 @@ Access dashboard at: http://localhost:3000
 6. **Forecasting**: XGBoost/LSTM predicts traffic 4 hours ahead
 7. **Visualization**: React dashboard displays real-time predictions
 
-## 📈 Model Performance
+##  Model Performance
 
 Expected metrics after training:
 - **GMM Clustering**: Silhouette Score > 0.5
@@ -179,7 +179,7 @@ Expected metrics after training:
 - **Prediction Horizon**: 4 hours ahead
 - **Update Frequency**: Real-time (1-minute intervals)
 
-## 🛠️ Configuration
+##  Configuration
 
 Edit `data_collection/config.yaml`:
 
@@ -200,7 +200,7 @@ api:
   update_interval: 60  # seconds
 ```
 
-## 📝 Maintenance
+##  Maintenance
 
 ### Daily Tasks
 - Monitor system logs: `tail -f data_collection/logs/scanner.log`
@@ -216,7 +216,7 @@ api:
 - Update system software
 - Check hardware connections
 
-## 🧪 Testing
+##  Testing
 
 ```bash
 # Run all tests
@@ -229,7 +229,7 @@ python -m pytest tests/test_data_processor.py
 python -m pytest --cov=. tests/
 ```
 
-## 📚 Documentation
+##  Documentation
 
 - [Data Collection Guide](docs/data_collection.md)
 - [ML Model Documentation](docs/ml_models.md)
@@ -237,26 +237,26 @@ python -m pytest --cov=. tests/
 - [Dashboard Guide](docs/dashboard.md)
 - [Deployment Guide](docs/deployment.md)
 
-## 🤝 Contributing
+##  Contributing
 
 Contributions welcome! Please read our contributing guidelines and submit pull requests.
 
-## 📄 License
+##  License
 
 MIT License - See LICENSE file for details
 
-## 🙏 Acknowledgments
+##  Acknowledgments
 
 - Built with privacy-first principles
 - Inspired by ethical AI and smart city initiatives
 - Designed for sustainable, off-grid operation
 
-## 📧 Support
+##  Support
 
 For issues, questions, or contributions, please open an issue on GitHub.
 
 ---
 
-**Status**: Production Ready ✅  
+**Status**: Production Ready   
 **Version**: 1.0.0  
 **Last Updated**: October 2025
