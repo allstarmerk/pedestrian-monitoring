@@ -1,12 +1,12 @@
 # USB Storage Feature - Summary
 
-## ✅ USB Storage Support Added!
+##  USB Storage Support Added!
 
 Your pedestrian monitoring system now includes **automatic USB storage support** for easy data collection and retrieval in the field.
 
 ---
 
-## 🎯 What Changed
+##  What Changed
 
 ### New Files Added
 
@@ -54,15 +54,15 @@ Your pedestrian monitoring system now includes **automatic USB storage support**
 ### Zero Configuration Required
 
 Just plug in a USB drive - that's it! The system handles everything:
-- ✅ Detection
-- ✅ Mounting
-- ✅ Directory creation
-- ✅ Permissions
-- ✅ Fallback
+-  Detection
+-  Mounting
+-  Directory creation
+-  Permissions
+-  Fallback
 
 ---
 
-## 💡 Key Benefits
+##  Key Benefits
 
 ### For Field Deployment
 
@@ -93,7 +93,7 @@ Just plug in a USB drive - that's it! The system handles everything:
 
 ---
 
-## 🔧 Quick Usage
+##  Quick Usage
 
 ### Initial Setup (One Time)
 
@@ -139,7 +139,7 @@ python3 utils/usb_manager.py unmount
 
 ---
 
-## 📊 Storage Capacity
+##  Storage Capacity
 
 **Typical USB Drive: 16GB**
 
@@ -154,7 +154,7 @@ python3 utils/usb_manager.py unmount
 
 ---
 
-## 🔌 Hardware Requirements
+##  Hardware Requirements
 
 ### USB Drive Recommendations
 
@@ -181,16 +181,16 @@ USB drive power draw: ~100mA (minimal)
 
 ---
 
-## 🛠️ Command Reference
+##  Command Reference
 
 ```bash
 # Detection
 python3 utils/usb_manager.py detect
-# Output: ✓ Found USB device: /dev/sda1
+# Output: Found USB device: /dev/sda1
 
 # Mount
 python3 utils/usb_manager.py mount
-# Output: ✓ USB mounted at: /mnt/usb_storage
+# Output: USB mounted at: /mnt/usb_storage
 
 # Check Info
 python3 utils/usb_manager.py info
@@ -202,12 +202,12 @@ python3 utils/usb_manager.py test
 
 # Unmount (before removal!)
 python3 utils/usb_manager.py unmount
-# Output: ✓ USB safely unmounted
+# Output: USB safely unmounted
 ```
 
 ---
 
-## 🎓 Technical Details
+## Technical Details
 
 ### Mount Point
 
@@ -233,15 +233,15 @@ System automatically:
 
 ---
 
-## 🚦 Integration Status
+##  Integration Status
 
-### ✅ Fully Integrated Components
+###  Fully Integrated Components
 
 - **Bluetooth Scanner**: Saves to USB automatically
 - **Data Processor**: Reads from USB first
 - **USB Manager**: Complete management tool
 
-### 🔄 Transparent Operation
+###  Transparent Operation
 
 **No code changes needed in your scripts!**
 
@@ -249,7 +249,7 @@ The system detects and uses USB automatically. Your existing code works exactly 
 
 ---
 
-## 📝 Migration from SD Card
+##  Migration from SD Card
 
 ### Existing Data on SD Card?
 
@@ -269,7 +269,7 @@ cp -r /home/pi/pedestrian-monitoring/data/* /mnt/usb_storage/pedestrian-data/
 
 ---
 
-## 🔒 Data Safety
+## Data Safety
 
 ### Backup Strategy
 
@@ -292,7 +292,7 @@ cp -r /home/pi/pedestrian-monitoring/data/* /mnt/usb_storage/pedestrian-data/
 
 ---
 
-## ⚠️ Important Notes
+## Important Notes
 
 ### Always Unmount Before Removal!
 
@@ -319,17 +319,7 @@ If space low:
 
 ---
 
-## 🎉 Success Story
-
-**Before USB Support:**
-"I had to SSH into the Pi every time I wanted data, or bring a monitor to the metro station!"
-
-**After USB Support:**
-"Now I just pop out the USB drive, plug it into my laptop, and have instant access to all the data. Takes 30 seconds!"
-
----
-
-## 📚 Documentation
+## Documentation
 
 - **Setup**: [USB_STORAGE_GUIDE.md](USB_STORAGE_GUIDE.md) - Complete guide
 - **Code**: `utils/usb_manager.py` - Well-commented source
@@ -337,17 +327,17 @@ If space low:
 
 ---
 
-## ✨ Summary
+##  Summary
 
 ### What You Get
 
-✅ **Plug-and-play USB support**
-✅ **Automatic detection and mounting**
-✅ **Smart fallback to SD card**
-✅ **Easy field data retrieval**
-✅ **No configuration required**
-✅ **Command-line management tools**
-✅ **Comprehensive documentation**
+ **Plug-and-play USB support**
+ **Automatic detection and mounting**
+ **Smart fallback to SD card**
+ **Easy field data retrieval**
+ **No configuration required**
+ **Command-line management tools**
+ **Comprehensive documentation**
 
 ### What You Need
 
@@ -360,8 +350,4 @@ If space low:
 
 **The system now supports USB storage while maintaining full backward compatibility with SD card storage. Your deployment just got 10x easier!** 🚀
 
----
-
-**Version**: 1.1  
-**Feature Added**: October 2025  
-**Status**: Production Ready ✅
+--
